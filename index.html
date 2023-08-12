@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>ZENHR</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- Normalize File -->
+		<link rel="stylesheet" href="css.normalize/normalize.css" />
+		<!-- The Main Css File -->
+		<link rel="stylesheet" href="Css/main.css" />
+		<!-- FontAwesome File -->
+		<link rel="stylesheet" href="fontawesome/css/all.css" />
+
+		<!-- Google Font **Cairo** -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- JavaScript File -->
+		<script src="Javascript/main.js" defer></script>
+	</head>
+
+	<body>
+		<div class="up">
+			<i class="fa-solid fa-chevron-up"></i>
+		</div>
+		
+		<!-- ----------------------------------------------------------- -->
+		<header>
+			<div class="container">
+				<div class="logo">
+					<p>zen<span>hr</span></p>
+				</div>
+				<div class="nav-bar">
+					<ul class="first-nav">
+						<li aria-expanded="false" class="found about-system">
+							عن النظام
+							<ul class="window-a">
+								<li class="third-nav">
+									<div class="about-us">
+										<div class="us-us">
+											<p>حلولنا</p>
+											<i class="fa-solid fa-arrow-left"></i>
+										</div>
+										<ul class="window-a-a">
+											<li><a href="" target="_blank">مسير الرواتب</a></li>
+											<li><a href="" target="_blank">تتبع الدوام والوقت</a></li>
+											<li>
+												<a href="" target="_blank">الخدمات الذاتية للموظفين</a>
+											</li>
+											<li>
+												<a href="" target="_blank"
+													>الترحيب بالموظفين الجدد وإنهاء الخدمات</a
+												>
+											</li>
+											<li><a href="" target="_blank">تقييم الأداء</a></li>
+											<li>
+												<a href="" target="_blank"
+													>نظام تتبع طلبات المتقدمين (ZenATS)</a
+												>
+											</li>
+											<li><a href="" target="_blank">جميع حلولنا</a></li>
+										</ul>
+									</div>
+								</li>
+								<li>
+									<a href="" target="_blank">التكامل مع التطبيقات الأخرى</a>
+								</li>
+								<li><a href="" target="_blank">تطبيق الجوال</a></li>
+							</ul>
+						</li>
+						<li aria-expanded="false" class="found content">
+							محتوى
+							<ul class="window-a">
+								<li><a href="">المدونة</a></li>
+								<li><a href="">الأوراق البيضاء</a></li>
+								<li><a href="">الأسئلة الشائعة</a></li>
+								<li><a href="">معجم مصطلحات الموارد البشرية</a></li>
+								<li><a href="">دراسات العملاء</a></li>
+								<li><a href="">حاسبة الرواتب</a></li>
+								<li><a href="">احسب الضريبة على راتبك</a></li>
+								<li><a href="">نماذج خطابات الموارد البشرية</a></li>
+								<li><a href="">واجهة برمجة التطبيقات (API)</a></li>
+							</ul>
+						</li>
+						<li aria-expanded="false" class="found about-facility">
+							عن المنشأة
+							<ul class="window-a">
+								<li><a href="">عن ZenHR</a></li>
+								<li><a href="">جوائز ZenHR</a></li>
+								<li><a href="">شهادات العملاء</a></li>
+								<li><a href="">أصبح شريكاً</a></li>
+								<li><a href="">انضم إلى فريقنا</a></li>
+							</ul>
+						</li>
+						<li>احجز اجتماع</li>
+					</ul>
+					<span class="line-nav"></span>
+					<ul class="second-nav">
+						<li><a href="" target="_blank">English</a></li>
+						<li><a href="" target="_blank">تسجيل الدخول</a></li>
+					</ul>
+					<button class="start-now" aria-label="ابدأ الآن">ابدأ الآن</button>
+				</div>
+				<div class="nav-icon">
+					<i aria-expanded="true" class="fa-solid fa-bars"></i>
+					<i aria-expanded="false" class="fa-solid fa-xmark"></i>
+				</div>
+			</div>
+		</header>
+
+		<!-- -------------------------------------------------------------- -->
+
+		<main>
+			<div class="container">
+				<div class="main-text">
+					<h1>معجم مصطلحات الموارد البشرية الرئيسية</h1>
+					<p>
+						اطلع على معجم الموارد البشرية الشامل من ZenHR، والذي يوفر تعريفات
+						لمصطلحات الموارد البشرية الرئيسية التي يستخدمها مسؤولو الموارد
+						البشرية والتوظيف بشكل متكرر.
+					</p>
+				</div>
+				<div class="search">
+					<input
+						oninput="clickFunction(this)"
+						type="text"
+						name="search"
+						aria-label="بحث"
+						placeholder="بحث..."
+					/>
+					<i class="fa-solid fa-magnifying-glass"></i>
+				</div>
+				<div class="main-boxes">
+					<div
+						data-letter="الكل"
+						class="letter active"
+						onclick="clickFunction(this)"
+					>
+						الكل
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<!-- ------------------------------------------------------------------ -->
+
+		<section>
+			<div class="container">
+				<div class="articles"></div>
+			</div>
+		</section>
+
+		<!-- --------------------------------------------------------------------------- -->
+
+		<div class="info">
+			<div class="container">
+				<h2>
+					هل ترغب بتسهيل عمليات الموارد البشرية اليومية للموظفين في منشأتك؟
+				</h2>
+				<div class="info-buttons">
+					<div class="get-info">اطلب عرض توضيحي</div>
+					<div class="booking">احجز موعد</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- ------------------------------------------------------------------------------ -->
+
+		<footer>
+			<div class="container">
+				<div class="foot-catch">
+					<div class="logo">
+						<p>zen<span>hr</span></p>
+					</div>
+					<ul class="about-monch">
+						<li>عن المنشأة</li>
+						<li><a href="">عن ZenHR</a></li>
+						<li><a href="">جوائز ZenHR</a></li>
+						<li><a href="">شهادات العملاء</a></li>
+						<li><a href="">أصبح شريكاً</a></li>
+						<li><a href="">انضم إلى فريقنا</a></li>
+					</ul>
+					<ul class="about-us">
+						<li>حلولنا</li>
+						<li><a href="" target="_blank">مسير الرواتب</a></li>
+						<li><a href="" target="_blank">تتبع الدوام والوقت</a></li>
+						<li>
+							<a href="" target="_blank">الخدمات الذاتية للموظفين</a>
+						</li>
+						<li>
+							<a href="" target="_blank"
+								>الترحيب بالموظفين الجدد وإنهاء الخدمات</a
+							>
+						</li>
+						<li><a href="" target="_blank">تقييم الأداء</a></li>
+						<li>
+							<a href="" target="_blank">نظام تتبع طلبات المتقدمين (ZenATS)</a>
+						</li>
+						<li><a href="" target="_blank">جميع حلولنا</a></li>
+					</ul>
+					<ul class="content">
+						<li>محتوى</li>
+						<li><a href="">المدونة</a></li>
+						<li><a href="">الأوراق البيضاء</a></li>
+						<li><a href="">الأسئلة الشائعة</a></li>
+						<li><a href="">معجم مصطلحات الموارد البشرية</a></li>
+						<li><a href="">دراسات العملاء</a></li>
+						<li><a href="">حاسبة الرواتب</a></li>
+						<li><a href="">احسب الضريبة على راتبك</a></li>
+						<li><a href="">نماذج خطابات الموارد البشرية</a></li>
+						<li><a href="">واجهة برمجة التطبيقات (API)</a></li>
+					</ul>
+					<div class="contact-social">
+						<ul class="contact-us">
+							<li>تواصل معنا</li>
+							<li>المملكة العربية السعودية <a href="">+966 54 129 8521</a></li>
+							<li>الأردن<a href="">+962 6 577 7500</a></li>
+							<li>الإمارات العربية المتحدة<a href="">+971 58 816 7685</a></li>
+						</ul>
+						<div class="social-media">
+							<a href="">sales@zenhr.com</a>
+							<div class="social-icons">
+								<i class="fa-brands fa-twitter"></i>
+								<i class="fa-brands fa-youtube"></i>
+								<i class="fa-brands fa-linkedin-in"></i>
+								<i class="fa-brands fa-instagram"></i>
+								<i class="fa-brands fa-facebook-f"></i>
+							</div>
+							<div class="downloads">
+								<div class="app-store">
+									<img src="Images/App_Store.png" alt="">
+								</div>
+								<div class="google-play">
+									<img src="Images/Google_Play.png" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="finish">
+					<p class="para-two">ZenHR © 2023 جميع الحقوق محفوظة</p>
+					<p class="para-two">سياسة الخصوصية</p>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>
