@@ -21,14 +21,14 @@
 		/>
 
 		<!-- JavaScript File -->
-		<script src="Javascript/main.js" defer></script>
+		<!-- <script src="Javascript/main.js" type="module" defer></script> -->
 	</head>
 
 	<body>
 		<div class="up">
 			<i class="fa-solid fa-chevron-up"></i>
 		</div>
-		
+
 		<!-- ----------------------------------------------------------- -->
 		<header>
 			<div class="container">
@@ -139,7 +139,7 @@
 					<div
 						data-letter="الكل"
 						class="letter active"
-						onclick="clickFunction(this)"
+						onclick="clickOneTwo(this)"
 					>
 						الكل
 					</div>
@@ -233,10 +233,10 @@
 							</div>
 							<div class="downloads">
 								<div class="app-store">
-									<img src="Images/App_Store.png" alt="">
+									<img src="Images/App_Store.png" alt="" />
 								</div>
 								<div class="google-play">
-									<img src="Images/Google_Play.png" alt="">
+									<img src="Images/Google_Play.png" alt="" />
 								</div>
 							</div>
 						</div>
@@ -248,5 +248,7 @@
 				</div>
 			</div>
 		</footer>
+
+		<script src="Javascript/main.js" type="module"></script>
 	</body>
 </html>

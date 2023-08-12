@@ -1,3 +1,5 @@
+import * as mainMain from "../Javascript/data.js";
+
 const navNav = document.querySelector("header .container .nav-bar");
 const aboutSys = document.querySelectorAll("header .first-nav li");
 const abUs = document.querySelector("header .third-nav");
@@ -7,36 +9,47 @@ const mainInput = document.querySelector("main .container .search input");
 const mainBox = document.querySelector("main .container .main-boxes");
 const sectionArticles = document.querySelector("section .container .articles");
 
-let mainArray;
+let mainArray = Object(mainMain.articles);
 // ---------------------------------------- fetch json and create Elements------------------------------------------
-fetch("../JSON/main.json")
-	.then((resolve) => {
-		let mainJson = resolve.json();
-		return mainJson;
-	})
-	.then((resol) => {
-		let lettersArray = Array.from(Object.keys(resol.articles));
-		createLettersButtons(lettersArray); // call back function --------------------------------
+// fetch("../JSON/main.json")
+// 	.then((resolve) => {
+// 		let mainJson = resolve.json();
+// 		return mainJson;
+// 	})
+// 	.then((resol) => {
+// 		let lettersArray = Array.from(Object.keys(resol.articles));
+// 		createLettersButtons(lettersArray); // call back function --------------------------------
 
-		mainArray = Object(resol.articles);
+// 		mainArray = Object(resol.articles);
 
-		return resol.articles;
-	})
-	.then((res) => {
-		createArticles(res); // call back function-----------------------
+// 		return resol.articles;
+// 	})
+// 	.then((res) => {
+// 		createArticles(res); // call back function-----------------------
+// 	});
+
+let lettersArray = Array.from(Object.keys(mainArray));
+createLettersButtons(lettersArray); // call back function --------------------------------
+createArticles(mainArray); // call back function-----------------------
+
+let letterBtn = document.querySelectorAll("main .main-boxes div");
+letterBtn.forEach((elem) => {
+	elem.addEventListener("click", () => {
+		clickOneTwo(elem);
 	});
+});
 
 // ------------ Create Letters ---------------------------------------------
 function createLettersButtons(test) {
 	test.forEach((e) => {
 		let createBox = `
-			<div data-letter="${e}" class="letter" onclick='clickFunction(this)'>${e}</div>
+			<div data-letter="${e}" class="letter" onclick="clickOneTwo(this)">${e}</div>
 		`;
 		mainBox.innerHTML = mainBox.innerHTML + createBox;
 	});
 }
 
-function clickFunction(e) {
+function clickOneTwo(e) {
 	let buttonActive = Array.from(e.parentElement.children);
 	buttonActive.forEach((element) => {
 		if (element.dataset.letter === e.dataset.letter) {
@@ -225,10 +238,10 @@ window.addEventListener("scroll", () => {
 	}
 });
 
-upButton.addEventListener('click', () => {
+upButton.addEventListener("click", () => {
 	window.scroll({
 		top: 0,
 		left: 0,
 		behavior: "smooth",
 	});
-})
+});
