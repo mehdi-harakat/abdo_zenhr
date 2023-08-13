@@ -541,6 +541,18 @@ main .container .main-boxes .letter:hover {
 
 /* --------------------------------------------------------------------------------- */
 
+section .articles span {
+	background-color: #ffe713a4;
+}
+
+.remove {
+	display: none !important;
+}
+
+.add {
+	display: block !important;
+}
+
 section {
 	padding-top: 20px;
 	padding-bottom: 80px;
@@ -559,7 +571,7 @@ section .container .articles .artic-boxes {
 	display: flex;
 }
 
-section .container .articles .artic-boxes .big-letter h2 {
+section .container .articles .artic-boxes  h2 {
 	font-size: 80px;
 	width: 160px;
 }
@@ -594,22 +606,19 @@ section .container .articles .artic-boxes .artic-text .artic-card p {
 		padding: 0 0px;
 	}
 
-	section .container .articles .artic-boxes .big-letter h2 {
+	section .container .articles .artic-boxes h2 {
 		width: 120px;
 	}
 }
 
 @media (max-width: 768px) {
-	section .container .articles .artic-boxes .big-letter h2 {
-		width: 200px;
-	}
-
 	section .container .articles .artic-boxes {
 		flex-direction: column;
 		align-items: center;
 	}
 
-	section .container .articles .artic-boxes .big-letter h2 {
+	section .container .articles .artic-boxes h2 {
+		width: 200px;
 		font-size: 60px;
 		text-align: center;
 		margin-bottom: 60px;

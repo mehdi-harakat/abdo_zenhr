@@ -176,4 +176,4 @@ const articles = {
 };
 
 
-export {articles}
+export {articles};

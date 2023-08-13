@@ -11,7 +11,7 @@ const sectionArticles = document.querySelector("section .container .articles");
 
 let mainArray = Object(mainMain.articles);
 // ---------------------------------------- fetch json and create Elements------------------------------------------
-// fetch("../JSON/main.json")
+// fetch("https://mehdi-harakat.github.io/abdo_zenhr/JSON/main.json")
 // 	.then((resolve) => {
 // 		let mainJson = resolve.json();
 // 		return mainJson;
@@ -109,8 +109,10 @@ function createElementByElement(test, testThree) {
 		let artCard = document.createElement("div");
 		artCard.className = "artic-card";
 		let HThree = document.createElement("h3");
+		HThree.className = "hThree";
 		HThree.innerHTML = ele;
 		let para = document.createElement("p");
+		para.className = "para";
 		para.innerHTML = paraValue[ind];
 		artCard.append(HThree, para);
 		artText.appendChild(artCard);
@@ -245,3 +247,131 @@ upButton.addEventListener("click", () => {
 		behavior: "smooth",
 	});
 });
+
+// ---------------------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
+
+const container = document.querySelector(".articles");
+
+mainInput.addEventListener("input", () => {
+	let letters = 'aertuiopqsdfghjklmwxcvbn/<>"13 ';
+	let tester = true;
+	for (let i = 0; i < letters.length; i++) {
+		if (letters[i] === mainInput.value) {
+			tester = false;
+		}
+	}
+
+	if (tester === false) {
+		mainInput.value = "";
+	} else {
+		container.innerHTML = "";
+		createArticles(mainArray);
+		searchText();
+		hideArticles();
+	}
+
+	if (mainInput.value === "" || mainInput.value === " ") {
+		createArticles(mainArray);
+	}
+
+	if (mainInput.value === "") {
+		let buttonActive = Array.from(
+			document.querySelector("main .main-boxes").children
+		);
+		buttonActive.forEach((elementeeee) => {
+			if (elementeeee.dataset.letter === "الكل") {
+				elementeeee.classList.add("active");
+			} else {
+				elementeeee.classList.remove("active");
+			}
+		});
+	}
+});
+
+function searchText() {
+	if (mainInput.value === " " || mainInput.value === "") {
+		false;
+	} else {
+		// The text you want to search
+		let searchOneText = mainInput.value.trim().toLocaleUpperCase();
+		// Get all the text in the HTML document
+		let htmlText = container.innerHTML;
+		// Create a regular expression to search for the text
+		let searchRegEx = new RegExp(searchOneText, "g");
+		// Replace the searched text with a span element containing the searched text
+		let newHtmlText = htmlText.replace(
+			searchRegEx,
+			"<span class='highlight'>" + searchOneText + "</span>"
+		);
+		// Update the HTML document with the new text
+		container.innerHTML = newHtmlText;
+	}
+}
+
+function hideArticles() {
+	let artic = document.querySelectorAll(".artic-boxes");
+	let artictext = document.querySelectorAll(".artic-text");
+	let hThree = document.querySelectorAll(".hThree");
+	let para = document.querySelectorAll(".para");
+	hThree.forEach((e) => {
+		hideOneByOne(e);
+	});
+
+	para.forEach((e) => {
+		hideOneByOne(e);
+	});
+
+	artictext.forEach((elem) => {
+		let foundedTwo = false;
+		let catching = Array.from(elem.children);
+		catching.forEach((e) => {
+			if (e.classList.contains("add")) {
+				foundedTwo = true;
+			}
+		});
+		if (foundedTwo === false) {
+			elem.classList.add("remove");
+		} else {
+			false;
+		}
+	});
+
+	artic.forEach((el) => {
+		let arr = Array.from(el.children);
+		arr.forEach((e) => {
+			if (e.classList.contains("remove")) {
+				el.classList.add("remove");
+			}
+		});
+	});
+}
+
+function hideOneByOne(e) {
+	let founded = false;
+	if (e.hasChildNodes) {
+		e.childNodes.forEach((el) => {
+			if (el.tagName === "SPAN") {
+				founded = true;
+			} else {
+				false;
+			}
+		});
+	} else {
+		false;
+	}
+
+	if (founded === false) {
+		e.parentElement.classList.add("remove");
+	} else {
+		e.parentElement.classList.add("add");
+	}
+}
+
+// .parentElement.parentElement
